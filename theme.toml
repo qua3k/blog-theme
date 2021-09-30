@@ -1,0 +1,11 @@
+description = "A cool blog theme"
+features = "blog"
+homepage = "https://github.com/qua3k/blog-theme"
+license = "MIT"
+licenselink = "https://github.com/qua3k/blog-theme/blob/master/LICENSE"
+name = "blog-theme"
+tags = "blog"
+
+[author]
+  homepage = "https://qua3k.github.io/"
+  name = "qua3k"
