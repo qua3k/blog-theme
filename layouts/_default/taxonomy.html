@@ -3,7 +3,7 @@
     {{ partial "head.html" . }}
     <body>
         <h1 id="header"><a href="/">{{ .Site.Title }}</a></h1>
-        <p>{{ .Site.Params.Description }}</p>
+        <p>Posts under `<a href="{{ .Permalink }}">{{ .Title }}</a>`</p>
         <h2>Table of Contents</h2>
         <ol>
             {{ range .RegularPages }}
