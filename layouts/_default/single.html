@@ -5,9 +5,35 @@
         <header><h1 id="header"><a href="/">{{ .Site.Title }}</a></h1></header>
         <article>
             <h1>{{ .Title }}</h1>
-            {{- if or .Params.Author .Site.Author.name }}
-            <p align="right">{{- .Params.Author | default .Site.Author.name }}</p>
-            {{ end }}
+            {{- if or ($.Param "Author.name") (.Site.Author.name) }}
+            <p align="right">
+                {{- if $.Param "Author.name" }}
+                    {{- $.Param "Author.name" }}
+                    {{ if $.Param "Author.username" }}
+                        {{ if $.Param "Author.url" }}
+                            &#40;<a href="{{- $.Param "Author.url" }}">@{{- .Params.Author.username }}</a>&#41;
+                        {{ else }}
+                            &#40;@{{ $.Param "Author.username" }}&#41;
+                        {{ end }}
+                    {{ end }}
+                    {{ if $.Param "Author.bio" }}
+                        — {{ $.Param "Author.bio" }}
+                    {{ end }}
+                {{- else if .Site.Author.name}}
+                    {{- .Site.Author.name}}
+                    {{ if .Site.Author.username}}
+                        {{ if .Site.Author.url }}
+                            &#40;<a href="{{- .Site.Author.url }}">@{{- .Site.Author.username }}</a>&#41;
+                        {{ else }}
+                            &#40;@{{ .Site.Author.username }}&#41;
+                        {{ end }}
+                    {{ end }}
+                    {{ if .Site.Author.bio }}
+                        — {{ .Site.Author.bio }}
+                    {{ end }}
+                {{ end }}
+            </p>
+            {{- end }}
             {{ .Content }}
         </article>
         {{ partial "footer.html" .}}
