@@ -4,9 +4,9 @@
 <meta property="og:url" content="{{ .Permalink }}">
 <link href="{{ "LICENSE.txt" | absURL }}" rel="license">
 
-{{- if not .IsHome}}
+{{- if not .IsHome }}
     <meta property="og:title" content="{{ .Title }} &middot; {{ .Site.Title }}">
-{{- end}}
+{{- end }}
 
 {{- if .IsHome }}
     <meta property="og:title" content="{{ .Site.Title }}">
