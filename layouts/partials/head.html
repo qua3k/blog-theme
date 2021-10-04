@@ -4,5 +4,6 @@
     {{ partial "meta.html" . }}
     {{ partial "favicon.html" . }}
     <link href="{{ "main.css" | absURL }}" rel="stylesheet">
+    {{ if or .Params.script .Site.Params.script }}<script src="{{- .Params.script | default .Site.Params.script }}" defer></script>{{ end }}
     <link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
 </head>
