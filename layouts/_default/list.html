@@ -6,7 +6,7 @@
         <p>{{ .Site.Params.Description }}</p>
         <h2>Table of Contents</h2>
         <ol>
-            {{ range .RegularPages }}
+            {{ range .Site.RegularPages }}
             <li>
                 <span>{{.Date.Format "02 Jan 2006"}}</span> &middot; <a href="{{.Permalink}}">{{.Title}}</a>
             </li>
