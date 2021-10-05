@@ -31,7 +31,7 @@ body {
     font: var(--font-size) var(--font-family);
     line-height: 1.5;
     margin: auto;
-    max-width: 1012px;
+    max-width: 1000px;
     padding: 10px 16px 30px;
 }
 
