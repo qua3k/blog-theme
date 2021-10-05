@@ -29,7 +29,7 @@ body {
     border-color: var(--border-color);
     color: var(--color);
     font: var(--font-size) var(--font-family);
-    line-height: 1.25;
+    line-height: 1.5;
     margin: auto;
     max-width: 1012px;
     padding: 10px 16px 30px;
@@ -55,6 +55,7 @@ h6 {
     border-bottom: 1px solid #e0e0e0;
     font-size: 2em;
     font-weight: 600;
+    line-height: 1.25;
     margin-bottom: 16px;
     padding-bottom: 10px;
 }
