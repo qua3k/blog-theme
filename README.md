@@ -72,7 +72,7 @@ footer = "© 2021 John Smith"
 
 ### Custom JavaScript
 
-Custom JavaScript can be included for additional interactivity.
+Custom JavaScript modules can be included for additional interactivity.
 
 ```
 [params]
