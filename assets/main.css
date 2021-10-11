@@ -1,11 +1,17 @@
+/* blog-theme */
 :root {
     --anchor-color: #4a65fc38;
     --background-color: #fff;
-    --border-color: #000;
+    --border-color: #e0e0e0;
+    --code-color: #f6f8fa;
     --color: #000;
     --font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     --font-size: 16px;
     --link-color: #0366d6;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -32,7 +38,7 @@ pre {
 }
 
 footer {
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--border-color);
     padding-top: 10px;
     text-align: right;
 }
@@ -43,12 +49,18 @@ h3,
 h4,
 h5,
 h6 {
-    border-bottom: 1px solid #e0e0e0;
-    font-size: 2em;
     font-weight: 600;
     line-height: 1.25;
-    margin-bottom: 16px;
+}
+
+h1,
+h2 {
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
+}
+
+h1 {
+    font-size: 2em;
 }
 
 h2 {
@@ -64,15 +76,52 @@ h4 {
 }
 
 h5 {
-    font-size: .9em;
+    font-size: .875em;
 }
 
 h6 {
-    font-size: .8em;
+    font-size: .85em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+table {
+    margin-bottom: 16px;
 }
 
 li {
     margin-top: .5em;
+}
+
+pre {
+    border-radius: 6px;
+}
+
+pre > code {
+    border-radius: 6px;
+    background-color: var(--code-color);
+    display: block;
+    padding: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid var(--border-color);
+    padding: .75rem;
+    text-align: center;
+}
+
+th {
+    border-bottom-width: 2px;
 }
 
 .anchor {
@@ -89,29 +138,17 @@ li {
 
 .container {
     margin: auto;
-    max-width: 975px;
+    max-width: 1012px;
     padding: 10px 16px 30px;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --anchor-color: #58a6ff6c;
-        --background-color: #000;
-        --border-color: #fff;
+        --background-color: #0d1117;
+        --border-color: #21262c;
+        --code-color: #161b22;
         --color: #c9d1d9;
         --link-color: #58a6ff;
-    }
-
-    footer {
-        border-color: #21262d;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        border-color: #21262d;
     }
 }
