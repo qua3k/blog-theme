@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en" }}" prefix="og: https://ogp.me/ns#">
-    {{ partial "head.html" . }}
-    <body>
-        <h1 id="header"><a href="/">{{ .Site.Title }}</a></h1>
-        <p>{{ .Site.Params.Description }}</p>
-        <h2>Table of Contents</h2>
-        <ol>
-            {{ range .Site.RegularPages }}
-            <li>
-                <span>{{.Date.Format "02 Jan 2006"}}</span> &middot; <a href="{{.Permalink}}">{{.Title}}</a>
-            </li>
-            {{ end }}
-        </ol>
-        {{ partial "footer.html" .}}
-    </body>
-</html>
+{{ define "main" }}
+    <p>{{ .Site.Params.Description }}</p>
+    {{ range .Site.RegularPages }}
+        <article>
+            <h2><a class="article-title" href="{{ .Permalink }}">{{ .Title }}</a> &middot; <time datetime="{{.Date.Format "2006-01-02"}}">{{.Date.Format "02 Jan 2006"}}</time></h2>
+            {{ .Content }}
+        </article>
+    {{ end }}
+{{ end }}
