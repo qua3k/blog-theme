@@ -1,8 +1,8 @@
 {{ define "main" }}
-    <p>Posts under `<a href="{{ .Permalink }}">{{ .Title }}</a>`
+    <p>Posts under `<a href="{{ .Permalink }}">{{ .Title | title }}</a>`
     {{ range .RegularPages }}
         <article>
-            <h2><a class="article-title" href="{{ .Permalink }}">{{ .Title }}</a> &middot; <time datetime="{{.Date.Format "2006-01-02"}}">{{.Date.Format "02 Jan 2006"}}</time></h2>
+            <h2><a class="article-title" href="{{ .Permalink }}">{{ .Title | title }}</a> &middot; <time datetime="{{.Date.Format "2006-01-02"}}">{{.Date.Format "02 Jan 2006"}}</time></h2>
             {{ .Content }}
         </article>
     {{ end }}

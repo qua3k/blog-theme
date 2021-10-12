@@ -1,5 +1,5 @@
 {{ define "main" }}
-    <h1>{{ .Title }}</h1>
+    <h1>{{ .Title | title }}</h1>
     {{- if or ($.Param "Author.name") (.Site.Author.name) }}
     <p class="author">
         {{- if $.Param "Author.name" }}

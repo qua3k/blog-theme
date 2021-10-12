@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-    <title>{{- if .IsHome }}{{ .Site.Title }}{{- else }}{{ .Title }} &middot; {{ .Site.Title }}{{- end }}</title>
+    <title>{{- if .IsHome }}{{ .Site.Title }}{{- else }}{{ .Title | title }} &middot; {{ .Site.Title }}{{- end }}</title>
     {{ partial "meta.html" . }}
     {{ partial "favicon.html" . }}
     {{- $style := resources.Get "main.css" | minify }}

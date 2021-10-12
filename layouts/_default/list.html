@@ -2,7 +2,7 @@
     <p>{{ .Site.Params.Description }}
     {{- range .Site.RegularPages }}
         <article>
-            <h1 class="article-title"><a class="article-link" href="{{ .Permalink }}">{{ .Title }}</a> &middot; <time datetime="{{.Date.Format "2006-01-02"}}">{{.Date.Format "02 Jan 2006"}}</time></h1>
+            <h1 class="article-title"><a class="article-link" href="{{ .Permalink }}">{{ .Title | title }}</a> &middot; <time datetime="{{.Date.Format "2006-01-02"}}">{{.Date.Format "02 Jan 2006"}}</time></h1>
             {{- .Content }}
         </article>
     {{- end }}
