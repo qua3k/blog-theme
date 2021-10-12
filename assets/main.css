@@ -21,6 +21,9 @@ body {
     color: var(--color);
     font: var(--font-size) var(--font-family);
     line-height: 1.5;
+    margin: auto;
+    max-width: 1012px;
+    padding: 10px 16px 30px;
 }
 
 a {
@@ -155,12 +158,6 @@ th {
 
 .author {
     text-align: right;
-}
-
-.container {
-    margin: auto;
-    max-width: 1012px;
-    padding: 10px 16px 30px;
 }
 
 @media (prefers-color-scheme: dark) {
