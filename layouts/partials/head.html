@@ -4,5 +4,5 @@
     {{ partial "favicon.html" . }}
     {{- $style := resources.Get "main.css" | minify }}
     <link href="{{ $style.Permalink }}" rel="stylesheet">
-    {{- if .IsHome }}<link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">{{- end }}
+    {{ if .IsHome }}<link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">{{ end }}
     {{ if or .Params.script .Site.Params.script }}<script type="module" src="{{- .Params.script | default .Site.Params.script }}"></script>{{ end }}

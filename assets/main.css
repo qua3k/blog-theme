@@ -145,8 +145,12 @@ th {
     opacity: inherit;
 }
 
-.article-title {
+.article-link {
     color: var(--color);
+}
+
+.article-title {
+    font-size: 1.6em;
 }
 
 .author {
