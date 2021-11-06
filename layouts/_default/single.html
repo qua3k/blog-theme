@@ -11,8 +11,8 @@
                     &#40;@{{ $.Param "Author.username" }}&#41;
                 {{- end }}
             {{- end }}
-            {{- if $.Param "Author.bio" }}
-                    — {{ $.Param "Author.bio" }}
+            {{- with $.Param "Author.bio" }}
+                    — {{ . }}
             {{- end }}
         {{- else if .Site.Author.name }}
             {{- .Site.Author.name }}
@@ -23,8 +23,8 @@
                     &#40;@{{- .Site.Author.username }}&#41;
                 {{- end }}
             {{- end }}
-            {{- if .Site.Author.bio }}
-                    — {{ .Site.Author.bio }}
+            {{- with .Site.Author.bio }}
+                    — {{ . }}
             {{- end }}
         {{- end }}
     {{- end }}

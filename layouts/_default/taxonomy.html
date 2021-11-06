@@ -1,9 +1,10 @@
 {{ define "main" }}
     <p>Posts under `<a href="{{ .Permalink }}">{{ .Title | title }}</a>`
-    {{ range .RegularPages }}
+    {{- range .RegularPages }}
         <article>
-            <h1 class="article-title"><a class="article-link" href="{{ .Permalink }}">{{ .Title | title }}</a> &middot; <time datetime="{{.Date.Format "2006-01-02"}}">{{.Date.Format "02 Jan 2006"}}</time></h1>
-            {{ .Content }}
+            <h2 class="article-title"><a class="article-link" href="{{ .Permalink }}">{{ .Title | title }}</a> &middot; <time class="list-time" datetime="{{.Date.Format "2006-01-02"}}">{{.Date.Format "02 Jan 2006"}}</time></h2>
+            {{- .Summary }}
         </article>
-    {{ end }}
+        <p><a href="{{ .Permalink }}">Read more...</a></p>
+    {{- end }}
 {{ end }}

@@ -1,0 +1,8 @@
+{{ define "main" }}
+    <p>{{ .Site.Params.Description }}
+    <ol>
+        {{- range .Site.RegularPages }}
+            <li> <time class="list-time" datetime="{{.Date.Format "2006-01-02"}}">{{.Date.Format "02 Jan 2006"}}</time> &middot; <a class="article-link" href="{{ .Permalink }}">{{ .Title | title }}</a></h2>
+        {{- end }}
+    </ol>
+{{ end }}
