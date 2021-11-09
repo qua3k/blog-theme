@@ -1,9 +1,10 @@
 {{ define "main" }}
     <p>The page you requested wasn't found.
-    {{ range .Site.RegularPages }}
+        {{- range .RegularPages }}
         <article>
-            <h2><a class="article-title" href="{{ .Permalink }}">{{ .Title }}</a> &middot; <time datetime="{{.Date.Format "2006-01-02"}}">{{.Date.Format "02 Jan 2006"}}</time></h2>
-            {{ .Content }}
+            <h2 class="article-title"><a class="article-link" href="{{ .Permalink }}">{{ .Title | title }}</a> &middot; <time class="list-time" datetime="{{.Date.Format "2006-01-02"}}">{{.Date.Format "02 Jan 2006"}}</time></h2>
+            {{- .Summary }}
         </article>
-    {{ end }}
+        <p><a href="{{ .Permalink }}">Read more...</a></p>
+    {{- end }}
 {{ end }}
