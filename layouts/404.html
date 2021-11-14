@@ -1,5 +1,5 @@
 {{ define "main" }}
-    <p>The page you requested wasn't found.
+    <p>The page you requested wasn't found.</p>
         {{- range .RegularPages }}
         <article>
             <h2 class="article-title"><a class="article-link" href="{{ .Permalink }}">{{ .Title | title }}</a> &middot; <time class="list-time" datetime="{{.Date.Format "2006-01-02"}}">{{.Date.Format "02 Jan 2006"}}</time></h2>
