@@ -2,7 +2,7 @@
     <meta name="color-scheme" content="light dark">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ .Permalink }}">
-    <link href="{{ "LICENSE.txt" | absURL }}" rel="license">
+    <link href="{{ "LICENSE.txt" | relURL }}" rel="license">
 
 {{- if not .IsHome }}
     <meta property="og:title" content="{{ .Title }} &middot; {{ .Site.Title }}">
